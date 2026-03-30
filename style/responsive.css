@@ -1,0 +1,11 @@
+@media(max-width:888px){
+    .section-right{
+        display: none;
+    }
+}
+
+@media(max-width:888px){
+    .hamberger{
+        display: flex;
+    }
+}
