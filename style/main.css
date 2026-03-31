@@ -58,7 +58,14 @@ body{
     align-items: end;
     padding: var(--space-3) 0;
 }
-
+.unit-btn{
+    border: none;
+    padding: 3px 10px;
+    border-radius: 3px;
+}
+.unit-btn:hover{
+    color: white;
+}
 
 .article-bottom{
     flex: 65;
@@ -89,7 +96,7 @@ body{
     gap: 3px;
     padding: var(--space-1);
 }
-button{
+.calculator-btn{
     border-radius: 5px;
     box-shadow: var(--shadow-btn);
     background-color: var(--bg-btn);
