@@ -1,4 +1,4 @@
-@import url(./variable.css);
+@import url(./varaible.css);
 
 *{
     margin: 0;
@@ -22,11 +22,12 @@ body{
     color: var(--text-primary);
 }
 
-
 .section-left{
     flex: 70;
     display: flex;
     flex-direction: column;
+    flex-shrink: 0;
+    width: max-content;
 }
 .article-top{
     flex: 35;
@@ -39,7 +40,7 @@ body{
     display: flex;
     align-items: center;
     gap: 10px;
-    padding-left: var(--space-5);
+    padding-left: var(--space-1);
 }
 .hamberger{
     display: none;
@@ -49,6 +50,23 @@ body{
 }
 .calculation-area{
     flex: 50;
+    min-height: 80px;
+    margin: 10px;
+    /* border: 1px solid salmon; */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    justify-content: end;
+    padding-right: 15px;
+}
+.whole-expression{
+    flex: 40;
+    color: rgb(156, 153, 153);
+}
+.current-expression{
+    flex: 60;
+    font-size: 3rem;
 }
 .unit{
     flex: 30;
@@ -74,23 +92,24 @@ body{
     flex-direction: column;
 }
 .function-div{
-    flex: 10;
+    flex: 20;
     display: flex;
     align-items: center;
     gap: 50px;
     padding-left: var(--space-3);
 }
 .function-div>p{
-    font-size: var(--font-md);
+    font-size: var(--font-sm);
 }
 .fun-svg,.trigo-svg{
     position: relative;
-    top: 5px;
+    top: 4px;
+    height: 17px;
 }
 
 
 .button-div{
-    flex: 90;
+    flex: 80;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr ;
     gap: 3px;
@@ -101,7 +120,7 @@ body{
     box-shadow: var(--shadow-btn);
     background-color: var(--bg-btn);
     color: var(--text-primary);
-    padding: var(--space-3) 0;
+    padding: var(--space-2) 0;
     border: none;
     font-size: var(--font-md);
 }
@@ -118,6 +137,18 @@ button:hover{
     display: flex;
     gap: 30px;
     padding: 10px;
+}
+.d-flex{
+    flex: 30;
+    display: flex;
+    gap: 30px;
+    padding: 10px;
+}
+.cross-svg{
+    margin-right: 30px;
+}
+.d-none{
+    display: none;
 }
 .history,.memory{
     font-size: var(--font-md);
