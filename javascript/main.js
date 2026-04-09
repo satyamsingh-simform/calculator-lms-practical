@@ -1,18 +1,23 @@
+import { PRECEDENCE } from "./constant.js"
+
 let rightSection=document.querySelector('.section-right')
 let leftSection=document.querySelector('.section-left')
 let hamberger=document.querySelector('.hamberger')
 let cross=document.querySelector('.cross-svg')
 
+//fn to set class 
+function setClass(element,className){
+    element.className=className;
+}
+
 hamberger.addEventListener('click',()=>{
-    rightSection.className='d-flex';
-    console.log('class added');
-    console.log(rightSection);
-    leftSection.className='d-none'
+    setClass(rightSection, 'd-flex');
+    setClass(leftSection, 'd-none');
 })
 
 cross.addEventListener('click',()=>{
-    rightSection.className='section-right';
-    leftSection.className='section-left'
+    setClass(rightSection, 'section-right');
+    setClass(leftSection, 'section-left');
 })
 
 
@@ -23,10 +28,8 @@ let wholeExp = document.querySelector('.whole-expression');
 
 let expression='';
 
-function token(expression){
-    console.log(expression);
+function parseExpression(expression){
     let tokens=expression.match(/\d+|[+\-*/]/g);
-    console.log(tokens);
     return tokens;
 }
 
@@ -34,19 +37,12 @@ function convertToPostfix(tokens){
     let output=[];
     let stack=[];
 
-    const precedence={
-        '+': 1,
-        '-': 1,
-        '*': 2,
-        '/': 2
-    }
-
     for(let token of tokens){
         if(!isNaN(token)){
             output.push(token);
         }
         else{
-            while(stack.length && precedence[stack[stack.length-1]] >= precedence[token]){
+            while(stack.length && PRECEDENCE[stack[stack.length-1]] >= PRECEDENCE[token]){
                 output.push(stack.pop());
             }
             stack.push(token);
@@ -84,7 +80,7 @@ function calculatePostfix(postfix){
 }
 
 function calculateResult(expression){
-    let tokens=token(expression);
+    let tokens=parseExpression(expression);
     let postfix=convertToPostfix(tokens);
     let result=calculatePostfix(postfix);
     return result;
@@ -102,6 +98,7 @@ buttons.forEach((btn)=>{
         if(!isNaN(value) || ['+', '-', '*', '/'].includes(value)){
             expression=expression+value;
             currentVal.innerText=expression;
+            return;
         }
 
         if(value=== '='){
@@ -115,17 +112,20 @@ buttons.forEach((btn)=>{
                 currentVal.innerText='Error';
                 expression='';
             }
+            return;
         }
         //delete each char
         if(value==='X'){
             expression=expression.slice(0,-1);
             currentVal.innerText=expression;
+            return;
         }
         //clear
         if(value==='C'){
             expression = '';
             currentVal.innerText = '';
             wholeExp.innerText = '';
+            return;
         }
     });
 });
