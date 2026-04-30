@@ -23,8 +23,8 @@ export function handleInput(value){
             elements.currentVal.innerText=result;
             expression=result.toString();
         } 
-        catch{
-            elements.currentVal.innerText='Error';
+        catch(e){
+            elements.currentVal.innerText='invalid expression';
             expression='';
         }
         return;

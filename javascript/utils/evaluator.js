@@ -6,6 +6,7 @@ export function calculatePostfix(postfix){
             stack.push(Number(token));
         } 
         else{
+            if(stack.length<2)throw new Error('invalid expression');
             let b=stack.pop();
             let a=stack.pop();
 
@@ -17,6 +18,6 @@ export function calculatePostfix(postfix){
             }
         }
     }
-    
+    if(stack.length!==1) throw new Error('invalid operator');
     return stack[0];
 }
