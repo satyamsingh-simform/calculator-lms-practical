@@ -4,14 +4,14 @@ import {calculateResult} from "../utils/calculator.js";
 let expression='';
 
 /**
- * @description fn helps to handle diff diff button action of calculator
+ * @description function helps to handle different button action of calculator
  */
 export function handleInput(value){
     if(value === '×') value = '*';
     if(value === '÷') value = '/';
 
-    if(!isNaN(value) || ['+', '-', '*', '/'].includes(value)){
-        expression += value;
+    if(!isNaN(value) || ['+', '-', '*', '/','(',')','sin','cos','tan'].includes(value)){
+        expression+=value;
         elements.currentVal.innerText=expression;
         return;
     }
