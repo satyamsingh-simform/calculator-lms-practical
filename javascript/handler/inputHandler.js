@@ -1,5 +1,7 @@
 import { elements } from "../ui/dom.js";
+import { renderHistory } from "../ui/historyUI.js";
 import {calculateResult} from "../utils/calculator.js";
+import { addToHistory } from "../utils/history.js";
 
 let expression='';
 
@@ -16,16 +18,18 @@ export function handleInput(value){
         return;
     }
     //check for equal to btn
-    if (value === '='){
+    if(value === '='){
         try{
-            const result=calculateResult(expression);
-            elements.wholeExp.innerText=expression+'=';
-            elements.currentVal.innerText=result;
-            expression=result.toString();
+            const result = calculateResult(expression);
+            addToHistory(expression, result);
+            elements.wholeExp.innerText = expression + '=';
+            elements.currentVal.innerText = result;
+            expression = result.toString();
+            renderHistory();
         } 
         catch(e){
-            elements.currentVal.innerText='invalid expression';
-            expression='';
+            elements.currentVal.innerText = 'invalid expression';
+            expression = '';
         }
         return;
     }

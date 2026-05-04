@@ -8,4 +8,5 @@ export const elements={
     buttons:document.querySelectorAll('.calculator-btn'),
     currentVal:document.querySelector('.current-expression'),
     wholeExp:document.querySelector('.whole-expression'),
+    historyContainer:document.querySelector(".sec-right-body"),
 }

@@ -51,7 +51,7 @@ body{
 .calculation-area{
     flex: 50;
     min-height: 80px;
-    margin: 10px;
+    margin: var(--space-12) var(--space-12);
     box-shadow: var(--shadow-box);
     display: flex;
     flex-direction: column;
@@ -129,26 +129,38 @@ button:hover{
     box-shadow: var(--shadow-btn-hover);
     
 }
-
-
-.section-right{
-    flex: 30;
-    display: flex;
-    gap: 30px;
-    padding: 10px;
+.d-none{
+    display: none;
 }
 .d-flex{
     flex: 30;
     display: flex;
-    gap: 30px;
-    padding: 10px;
+    flex-direction: column;
+    gap: var(--space-8);
+    padding: var(--space-3);
 }
+
+.section-right{
+    flex: 30;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    padding: var(--space-3);
+}
+.sec-right-head{
+    display: flex;
+    gap: var(--space-5);
+    flex: 5;
+}
+.sec-right-body{
+    flex:95;
+    padding-left: var(--space-16);
+}
+
 .cross-svg{
-    margin-right: 30px;
+    margin-right: var(--space-8);
 }
-.d-none{
-    display: none;
-}
+
 .history,.memory{
     font-size: var(--font-md);
     cursor: pointer;
@@ -162,4 +174,8 @@ button:hover{
 .btn-num{
     background-color: var(--bg-btn-hover);
 
+}
+.history-item {
+  padding: var(--space-2);
+  border-bottom: 1px solid #333;
 }
