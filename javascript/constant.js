@@ -4,3 +4,5 @@ export const PRECEDENCE={
     '*': 2,
     '/': 2
 }
+
+export const HISTORY_KEY = "calc_history";

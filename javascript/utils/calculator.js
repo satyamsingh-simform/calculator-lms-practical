@@ -6,5 +6,5 @@ export function calculateResult(expression){
     let tokens=parseExpression(expression);
     let postfix=convertToPostfix(tokens);
     let result=calculatePostfix(postfix);
-    return result;
+    return Number(result.toFixed(3));;
 }
