@@ -3,15 +3,15 @@ import {calculateResult} from "../utils/calculator.js";
 
 let expression='';
 
-//fn helps to handle diff diff button action of calculator
+/**
+ * @description function helps to handle different button action of calculator
+ */
 export function handleInput(value){
-    //mapping 
     if(value === '×') value = '*';
     if(value === '÷') value = '/';
 
-    //check btn click value is number or operator
-    if(!isNaN(value) || ['+', '-', '*', '/'].includes(value)){
-        expression += value;
+    if(!isNaN(value) || ['+', '-', '*', '/','(',')','sin','cos','tan'].includes(value)){
+        expression+=value;
         elements.currentVal.innerText=expression;
         return;
     }

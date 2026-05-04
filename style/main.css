@@ -52,8 +52,7 @@ body{
     flex: 50;
     min-height: 80px;
     margin: 10px;
-    /* border: 1px solid salmon; */
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    box-shadow: var(--shadow-box);
     display: flex;
     flex-direction: column;
     align-items: end;
@@ -62,7 +61,7 @@ body{
 }
 .whole-expression{
     flex: 40;
-    color: rgb(156, 153, 153);
+    color: var(--text-secondary);
 }
 .current-expression{
     flex: 60;
@@ -70,11 +69,11 @@ body{
 }
 .unit{
     flex: 30;
-    width: 90%;
+    width: 80%;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: end;
-    padding: var(--space-3) 0;
+    padding: var(--space-3);
 }
 .unit-btn{
     border: none;
@@ -82,24 +81,24 @@ body{
     border-radius: 3px;
 }
 .unit-btn:hover{
-    color: white;
+    color:var(--text-primary);
 }
 
 .article-bottom{
     flex: 65;
-    margin: 3px;
+    margin: var(--space-1);
     display: flex;
     flex-direction: column;
 }
 .function-div{
-    flex: 20;
+    flex: 10;
     display: flex;
     align-items: center;
     gap: 50px;
     padding-left: var(--space-3);
 }
 .function-div>p{
-    font-size: var(--font-sm);
+    font-size: var(--font-md);
 }
 .fun-svg,.trigo-svg{
     position: relative;
@@ -109,7 +108,7 @@ body{
 
 
 .button-div{
-    flex: 80;
+    flex: 90;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr ;
     gap: 3px;
