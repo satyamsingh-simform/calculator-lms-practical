@@ -12,11 +12,14 @@ export function handleInput(value){
     if(value === '×') value = '*';
     if(value === '÷') value = '/';
 
-    if(!isNaN(value) || ['+', '-', '*', '/','(',')','sin','cos','tan'].includes(value)){
+    if(value === '.' && expression.split(/[\+\-\*\/\(\)]/).pop().includes('.'))return;
+
+    if(!isNaN(value) || ['.','+', '-', '*', '/','%','(',')','sin','cos','tan','sec','cosec','cot','π'].includes(value)){
         expression+=value;
         elements.currentVal.innerText=expression;
         return;
     }
+
     //check for equal to btn
     if(value === '='){
         try{

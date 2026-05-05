@@ -11,7 +11,7 @@ export function convertToPostfix(tokens){
         if(!isNaN(token)){
             output.push(token);
         }
-        else if(['sin','cos','tan'].includes(token)) stack.push(token);
+        else if(['sin','cos','tan','sec','cosec','cot'].includes(token)) stack.push(token);
         else if(token==='(') stack.push(token);
         else if(token===')'){
             while(stack.length && stack[stack.length-1]!=='('){
@@ -19,7 +19,7 @@ export function convertToPostfix(tokens){
             }
             //remove the '('
             stack.pop();
-            if(stack.length&&['sin','cos','tan'].includes(stack[stack.length-1]))
+            if(stack.length&&['sin','cos','tan','sec','cosec','cot'].includes(stack[stack.length-1]))
                 output.push(stack.pop());
         }
         else{
