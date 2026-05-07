@@ -2,7 +2,7 @@
  * @description parse the given expression
  */
 export function parseExpression(expression){
-    let tokens=expression.match(/sin|cos|tan|\d+|[()+\-*/]/g)||[];
+    let tokens = expression.match(/cosec|cot|sec|sin|cos|tan|π|\d*\.?\d+|[()+\-*/%]/gi) || [];
     let result=[];
     for(let i=0;i<tokens.length;i++){
         let token=tokens[i];
