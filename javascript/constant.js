@@ -7,3 +7,5 @@ export const PRECEDENCE={
 }
 
 export const HISTORY_KEY = "calc_history";
+
+export const TRIGO_FUN=['sin','cos','tan','sec','cosec','cot'];

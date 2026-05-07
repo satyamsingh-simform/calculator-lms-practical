@@ -1,3 +1,5 @@
+import { TRIGO_FUN } from "../constant.js";
+
 /**
  * @description the actual calculation is done by this fn
  */
@@ -12,7 +14,7 @@ export function calculatePostfix(postfix){
         if(!isNaN(token)){
             stack.push(Number(token));
         } 
-        else if(['sin','cos','tan','sec','cosec','cot'].includes(token)){
+        else if(TRIGO_FUN.includes(token)){
             let a=stack.pop();
             // convert degree radians
             let rad=a*Math.PI/180;

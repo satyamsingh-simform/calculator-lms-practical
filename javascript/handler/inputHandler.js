@@ -12,6 +12,7 @@ export function handleInput(value){
     if(value === '×') value = '*';
     if(value === '÷') value = '/';
 
+    //prevent multiple decimal point for a number
     if(value === '.' && expression.split(/[\+\-\*\/\(\)]/).pop().includes('.'))return;
 
     if(!isNaN(value) || ['.','+', '-', '*', '/','%','(',')','sin','cos','tan','sec','cosec','cot','π'].includes(value)){
